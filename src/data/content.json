@@ -1,0 +1,83 @@
+{
+  "home": {
+    "headline": "Your Trusted Partner in FMCG Sourcing & Global Supply Chain",
+    "subheadline": "AceMart Group delivers end-to-end sourcing, compliance, and logistics solutions across India and global markets—ensuring seamless and reliable supply chain operations.",
+    "cta_primary_label": "Explore Services",
+    "cta_secondary_label": "Contact Us",
+    "blocks": [
+      {
+        "__component": "sections.service-card",
+        "id": 1,
+        "title": "Sourcing",
+        "description": "Identifying and securing high-quality FMCG products from reliable manufacturers globally.",
+        "icon_name": "Search"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 2,
+        "title": "Sampling",
+        "description": "Rigorous product sampling and evaluation to ensure standards meet your exact specifications.",
+        "icon_name": "FlaskConical"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 3,
+        "title": "Pricing",
+        "description": "Competitive price negotiation and transparent cost structures for maximum profitability.",
+        "icon_name": "CircleDollarSign"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 4,
+        "title": "Quality Checks",
+        "description": "Comprehensive quality assurance protocols at every stage of the supply chain.",
+        "icon_name": "ShieldCheck"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 5,
+        "title": "Logistics",
+        "description": "Efficient and secure transportation solutions tailored to FMCG requirements.",
+        "icon_name": "Truck"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 6,
+        "title": "Warehousing",
+        "description": "State-of-the-art storage facilities ensuring product integrity and inventory management.",
+        "icon_name": "Warehouse"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 7,
+        "title": "Documentation",
+        "description": "Expert handling of all export/import paperwork, customs clearance, and certifications.",
+        "icon_name": "FileText"
+      },
+      {
+        "__component": "sections.service-card",
+        "id": 8,
+        "title": "Compliance",
+        "description": "Ensuring adherence to international trade laws and regional regulatory standards.",
+        "icon_name": "Scale"
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About AceMart Group",
+    "heading": "Connecting India's FMCG Excellence to the World",
+    "body": "AceMart Group is a premier B2B FMCG sourcing and supply chain partner with a growing global clientele. We specialize in bridging the gap between high-quality manufacturers and international markets.\n\nOur comprehensive approach ensures that every step—from initial product sampling and rigorous quality checks to complex logistics and compliance documentation—is handled with precision and transparency.",
+    "years_of_expertise": 10,
+    "image": {
+      "url": "/logis-whouse-2d.webp",
+      "alternativeText": "Global Logistics and Warehousing",
+      "width": 800,
+      "height": 600
+    }
+  },
+  "contactInfo": {
+    "address": "Mumbai, Maharashtra, India",
+    "email": "contact@acemartgroup.com",
+    "phone": "+91 (22) 2345 6789"
+  }
+}

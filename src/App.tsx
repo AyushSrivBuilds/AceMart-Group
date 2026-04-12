@@ -9,6 +9,16 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Markets from './components/Markets';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import { content } from './lib/content';
+import type { ServiceCardBlock } from './types/cms';
+
+// Extract typed slices once at module level — components receive plain data via props.
+const { home: homeContent, about: aboutContent, contactInfo } = content;
+
+// Type-guard filter: pull only ServiceCard blocks out of the home Dynamic Zone.
+const serviceBlocks = homeContent.blocks.filter(
+  (b): b is ServiceCardBlock => b.__component === 'sections.service-card'
+);
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -21,13 +31,13 @@ function ScrollToTop() {
 function Home() {
   return (
     <>
-      <Hero />
+      <Hero data={homeContent} />
       <TrustStrip />
-      <Services />
-      <About />
+      <Services blocks={serviceBlocks} />
+      <About data={aboutContent} />
       <WhyChooseUs />
       <Markets />
-      <CTA />
+      <CTA contactInfo={contactInfo} />
     </>
   );
 }
@@ -40,11 +50,11 @@ export default function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<div className="py-12"><Services /></div>} />
-          <Route path="/about" element={<div className="py-12"><About /></div>} />
+          <Route path="/services" element={<div className="py-12"><Services blocks={serviceBlocks} /></div>} />
+          <Route path="/about" element={<div className="py-12"><About data={aboutContent} /></div>} />
           <Route path="/why-us" element={<div className="py-12"><WhyChooseUs /></div>} />
           <Route path="/markets" element={<div className="py-12"><Markets /></div>} />
-          <Route path="/contact" element={<div className="py-12"><CTA /></div>} />
+          <Route path="/contact" element={<div className="py-12"><CTA contactInfo={contactInfo} /></div>} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

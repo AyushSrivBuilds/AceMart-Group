@@ -1,6 +1,14 @@
 import { theme } from '../theme';
+import type { AboutContent } from '../types/cms';
 
-export default function About() {
+interface AboutProps {
+  data: AboutContent;
+}
+
+export default function About({ data }: AboutProps) {
+  // Split body on blank lines to recreate the multi-paragraph layout.
+  const paragraphs = data.body.split('\n\n').filter(Boolean);
+
   return (
     <section id="about" className="py-20 lg:py-[100px] bg-gray-50">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -10,8 +18,8 @@ export default function About() {
           <div className="relative order-2 lg:order-1">
             <div className="rounded-2xl overflow-hidden shadow-2xl relative w-full h-auto">
               <img 
-                src="/logis-whouse-2d.webp" 
-                alt="Global Logistics and Warehousing" 
+                src={data.image.url} 
+                alt={data.image.alternativeText ?? 'AceMart Group'} 
                 className="w-full h-auto object-contain"
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -19,7 +27,7 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                 <div className="text-white">
-                  <p className="font-bold text-3xl mb-1">10+</p>
+                  <p className="font-bold text-3xl mb-1">{data.years_of_expertise}+</p>
                   <p className="text-sm uppercase tracking-wider opacity-90">Years of Expertise</p>
                 </div>
               </div>
@@ -35,19 +43,16 @@ export default function About() {
           {/* Text Column */}
           <div className="order-1 lg:order-2 space-y-6">
             <h2 className="text-sm font-bold tracking-widest uppercase mb-2" style={{ color: theme.colors.primary }}>
-              About AceMart Group
+              {data.eyebrow}
             </h2>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight font-heading">
-              Connecting India's FMCG Excellence to the World
+              {data.heading}
             </h3>
             
             <div className="space-y-4 text-gray-600 text-lg leading-relaxed font-body">
-              <p>
-                AceMart Group is a premier B2B FMCG sourcing and supply chain partner with a growing global clientele. We specialize in bridging the gap between high-quality manufacturers and international markets.
-              </p>
-              <p>
-                Our comprehensive approach ensures that every step—from initial product sampling and rigorous quality checks to complex logistics and compliance documentation—is handled with precision and transparency.
-              </p>
+              {paragraphs.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
