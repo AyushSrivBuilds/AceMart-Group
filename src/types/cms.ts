@@ -24,6 +24,8 @@ export interface StrapiImage {
 type ComponentSlug =
   | 'sections.hero'
   | 'sections.service-card'
+  | 'sections.why-choose-item'
+  | 'sections.market-item'
   | 'sections.feature-list';
 
 export interface HeroBlock {
@@ -41,9 +43,29 @@ export interface ServiceCardBlock {
   title: string;
   description: string;
   /**
-   * A string key matching a Lucide icon name.
-   * Valid values: Search | FlaskConical | CircleDollarSign | ShieldCheck |
-   *               Truck | Warehouse | FileText | Scale
+   * Reference to a local mapping key (e.g. Search, Truck).
+   */
+  icon_name: string;
+}
+
+export interface WhyChooseItemBlock {
+  __component: 'sections.why-choose-item';
+  id: number;
+  title: string;
+  description: string;
+  /**
+   * Reference to a Lucide icon name.
+   */
+  icon_name: string;
+}
+
+export interface MarketItemBlock {
+  __component: 'sections.market-item';
+  id: number;
+  title: string;
+  description: string;
+  /**
+   * Reference to a Lucide icon name.
    */
   icon_name: string;
 }
@@ -56,7 +78,12 @@ export interface FeatureListBlock {
 }
 
 /** Union of all supported Dynamic Zone block types. */
-export type DynamicBlock = HeroBlock | ServiceCardBlock | FeatureListBlock;
+export type DynamicBlock = 
+  | HeroBlock 
+  | ServiceCardBlock 
+  | WhyChooseItemBlock 
+  | MarketItemBlock 
+  | FeatureListBlock;
 
 // ─── Single Type Schemas ──────────────────────────────────────────────────────
 

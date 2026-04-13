@@ -10,14 +10,26 @@ import Markets from './components/Markets';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import { content } from './lib/content';
-import type { ServiceCardBlock } from './types/cms';
+import type { 
+  ServiceCardBlock, 
+  WhyChooseItemBlock, 
+  MarketItemBlock 
+} from './types/cms';
 
 // Extract typed slices once at module level — components receive plain data via props.
 const { home: homeContent, about: aboutContent, contactInfo } = content;
 
-// Type-guard filter: pull only ServiceCard blocks out of the home Dynamic Zone.
+// Type-guard filters: pull specific blocks out of the home Dynamic Zone.
 const serviceBlocks = homeContent.blocks.filter(
   (b): b is ServiceCardBlock => b.__component === 'sections.service-card'
+);
+
+const whyChooseBlocks = homeContent.blocks.filter(
+  (b): b is WhyChooseItemBlock => b.__component === 'sections.why-choose-item'
+);
+
+const marketBlocks = homeContent.blocks.filter(
+  (b): b is MarketItemBlock => b.__component === 'sections.market-item'
 );
 
 function ScrollToTop() {
@@ -35,8 +47,8 @@ function Home() {
       <TrustStrip />
       <Services blocks={serviceBlocks} />
       <About data={aboutContent} />
-      <WhyChooseUs />
-      <Markets />
+      <WhyChooseUs blocks={whyChooseBlocks} />
+      <Markets blocks={marketBlocks} />
       <CTA contactInfo={contactInfo} />
     </>
   );

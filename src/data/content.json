@@ -60,6 +60,55 @@
         "title": "Compliance",
         "description": "Ensuring adherence to international trade laws and regional regulatory standards.",
         "icon_name": "Scale"
+      },
+      {
+        "__component": "sections.why-choose-item",
+        "id": 9,
+        "title": "End-to-End Solutions",
+        "description": "From manufacturer sourcing to final destination delivery, we manage the entire supply chain lifecycle.",
+        "icon_name": "ShieldCheck"
+      },
+      {
+        "__component": "sections.why-choose-item",
+        "id": 10,
+        "title": "Industry Expertise",
+        "description": "Deep understanding of FMCG market dynamics, product categories, and manufacturer capabilities.",
+        "icon_name": "Zap"
+      },
+      {
+        "__component": "sections.why-choose-item",
+        "id": 11,
+        "title": "Global Reach",
+        "description": "Extensive network of international trade partners, distributors, and logistics providers.",
+        "icon_name": "Globe"
+      },
+      {
+        "__component": "sections.why-choose-item",
+        "id": 12,
+        "title": "Compliance & Advisory",
+        "description": "Expert guidance on international trade regulations, customs, and product certifications.",
+        "icon_name": "Scale"
+      },
+      {
+        "__component": "sections.market-item",
+        "id": 13,
+        "title": "FMCG Distributors",
+        "description": "Reliable supply lines for regional and national distribution networks.",
+        "icon_name": "Building2"
+      },
+      {
+        "__component": "sections.market-item",
+        "id": 14,
+        "title": "Retail Chains",
+        "description": "Direct sourcing for supermarkets, hypermarkets, and convenience stores.",
+        "icon_name": "ShoppingBag"
+      },
+      {
+        "__component": "sections.market-item",
+        "id": 15,
+        "title": "Export & Import Businesses",
+        "description": "Seamless cross-border trade facilitation and compliance management.",
+        "icon_name": "Ship"
       }
     ]
   },
